@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/lucasmedeirosleite/EasyMapping.svg?branch=master)](https://travis-ci.org/lucasmedeirosleite/EasyMapping) &nbsp;
-![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/EasyMapping/badge.png) &nbsp; 
-![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/EasyMapping/badge.png) &nbsp; 
+[![codecov.io](http://codecov.io/github/lucasmedeirosleite/EasyMapping/coverage.svg?branch=master)](http://codecov.io/github/lucasmedeirosleite/EasyMapping?branch=master)
+![CocoaPod platform](https://cocoapod-badges.herokuapp.com/p/EasyMapping/badge.png) &nbsp;
+![CocoaPod version](https://cocoapod-badges.herokuapp.com/v/EasyMapping/badge.png) &nbsp;
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
@@ -121,8 +122,8 @@ typedef enum {
 {
     return [EKObjectMapping mappingForClass:self withBlock:^(EKObjectMapping *mapping) {
         [mapping mapPropertiesFromArray:@[
-         @"integerProperty", @"unsignedIntegerProperty", 
-         @"cgFloatProperty", @"doubleProperty", 
+         @"integerProperty", @"unsignedIntegerProperty",
+         @"cgFloatProperty", @"doubleProperty",
          @"boolProperty"
         ]];
     }];
@@ -134,10 +135,10 @@ typedef enum {
 * Converting a NSDictionary or NSArray to a object class or collection now becomes easy:
 
 ```objective-c
-Person *person = [EKMapper objectFromExternalRepresentation:personRepresentation 
+Person *person = [EKMapper objectFromExternalRepresentation:personRepresentation
                                                 withMapping:[Person objectMapping]];
 
-NSArray *carsArray = [EKMapper arrayOfObjectsFromExternalRepresentation:carsRepresentation 
+NSArray *carsArray = [EKMapper arrayOfObjectsFromExternalRepresentation:carsRepresentation
                                                             withMapping:[Car objectMapping]];
 ```
 
@@ -153,7 +154,7 @@ NSArray *collectionRepresentation = [EKSerializer serializeCollection:cars withM
 Suppose you have something like this:
 
 ```objective-c
-Person *person = [Person alloc] init]	
+Person *person = [Person alloc] init]
 ```
 
 To fill an already instantiated object you can do this:
@@ -197,7 +198,7 @@ Sometimes you can encounter situation, where your JSON will contain objects with
 
 ## Thanks
 
-Thanks to: 
+Thanks to:
 
 * [basitali](https://github.com/basitali) who added the fillObject functionality on EKMapper!
 * [Alejandro](https://github.com/aleph7) who added CoreData support!
@@ -205,6 +206,7 @@ Thanks to:
 * [Dany L'Hébreux](https://github.com/danylhebreux) who added the NSSet support!
 * [Jack](https://github.com/Jack-s) who added mapFieldsFromMappingObject and mapFieldsFromArrayToPascalCase functionality
 * [Yuri Kotov](https://github.com/advantis) and [Dmitriy](https://github.com/poteryaysya) which added a lot of performance improvements
+* [Moya organization](https://github.com/Moya/Moya) for awesome automated release process.
 
 ## Requirements
 
@@ -217,13 +219,35 @@ Thanks to:
 
 Using [CocoaPods](https://cocoapods.org):
 
-	pod 'EasyMapping', '~> 0.15.0'
+	pod 'EasyMapping', '~> 0.20'
 
 Using [Carthage](https://github.com/Carthage/Carthage):
 
     github "EasyMapping/EasyMapping"
 
 Carthage uses dynamic frameworks, which require iOS 8.
+
+Using [Swift Package Manager](https://github.com/apple/swift-package-manager):
+
+Add the following as a dependency to your `Package.swift`:
+
+```swift
+.Package(url: "https://github.com/lucasmedeirosleite/EasyMapping", majorVersion: 0, minorVersion: 2)
+```
+
+and then specify `.Target(name: "EasyMapping")` as a dependency of the Target in which you wish to use EasyMapping.
+Here's an example `PackageDescription`:
+
+```swift
+import PackageDescription
+
+let package = Package(
+  name: "MyApp",
+  dependencies: [
+    .Package(url: "https://github.com/lucasmedeirosleite/EasyMapping", majorVersion: 0, minorVersion: 2)
+  ]
+)
+```
 
 ## The idea
 

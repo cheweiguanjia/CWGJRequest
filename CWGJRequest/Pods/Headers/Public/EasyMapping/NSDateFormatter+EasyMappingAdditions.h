@@ -1,1 +1,1 @@
-../../../EasyMapping/EasyMapping/NSDateFormatter+EasyMappingAdditions.h
+../../../EasyMapping/Sources/EasyMapping/NSDateFormatter+EasyMappingAdditions.h

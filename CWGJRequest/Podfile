@@ -1,13 +1,10 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '9.0'
+3.7.2需求变更：
+	1、新增了查询停车费的异常展示、支付过渡页面、支付成功页面元素变更及支付失败及下单异常等情况
+	2、去除了原先的倒计时跟超时处理功能及UI
+这边跟iOS及安卓端同学同步评估需求变更后工时与之前保持不变
 
-target 'CWGJRequest' do
-  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for CWGJRequest
-  pod 'AFNetworking'
-  pod 'YYModel'
-  pod 'EasyMapping'
-  pod 'FastEasyMapping'
-end
+后面新增优化：
+1、券身广告显示逻辑调整
+2、车场iOS端新增版本升级提示功能
+3、车场端首页券新增转赠功能
+4、券身有效时间显示优化精确到分钟

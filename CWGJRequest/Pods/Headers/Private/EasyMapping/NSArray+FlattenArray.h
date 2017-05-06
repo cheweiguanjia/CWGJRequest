@@ -1,1 +1,1 @@
-../../../EasyMapping/EasyMapping/NSArray+FlattenArray.h
+../../../EasyMapping/Sources/EasyMapping/NSArray+FlattenArray.h

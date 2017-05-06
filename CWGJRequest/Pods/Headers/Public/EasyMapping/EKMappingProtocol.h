@@ -1,1 +1,1 @@
-../../../EasyMapping/EasyMapping/EKMappingProtocol.h
+../../../EasyMapping/Sources/EasyMapping/EKMappingProtocol.h

@@ -1,1 +1,1 @@
-../../../EasyMapping/EasyMapping/EKManagedObjectMapper.h
+../../../EasyMapping/Sources/EasyMapping/EKManagedObjectMapper.h

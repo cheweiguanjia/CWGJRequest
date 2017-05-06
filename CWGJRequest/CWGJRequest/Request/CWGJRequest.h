@@ -7,7 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CWGJRequestConvertible.h"
 
 @interface CWGJRequest : NSObject
+
+@end
+
+@interface CWGJRequestManager : NSObject
+
+@property (nonatomic, strong, readonly) NSURLSession *session;
+
++ (instancetype)sharedManager;
+
+- (instancetype)initWithSessionConfiguration:(NSURLSessionConfiguration *)configuration;
+
+- (void)cancelAllRequests;
+
+- (CWGJRequest *)request:(id<CWGJRequestConvertible>)requestConvertible;
+- (CWGJRequest *)asyncRequest:(id<CWGJRequestConvertible> (^)(void))requestConvertibleBlock;
 
 @end

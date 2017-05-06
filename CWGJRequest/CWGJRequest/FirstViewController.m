@@ -7,6 +7,9 @@
 //
 
 #import "FirstViewController.h"
+#import "CWGJRequestContext+Factory.h"
+#import "CWGJRequestContext.h"
+#import "CWGJRequest.h"
 
 @interface FirstViewController ()
 
@@ -17,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    CWGJRequestContext *context = [CWGJRequestContext baseRequestContext];
+    [[CWGJRequestManager sharedManager] request:context];
 }
 
 

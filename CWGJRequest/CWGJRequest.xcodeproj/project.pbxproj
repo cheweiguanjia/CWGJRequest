@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1932A3721EBB766100E0CD7D /* CWGJRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3711EBB766100E0CD7D /* CWGJRequestError.m */; };
+		1932A3781EBB7B6100E0CD7D /* CWGJResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */; };
+		1972D86B1EB8DCC600E320C4 /* CWGJResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972D86A1EB8DCC600E320C4 /* CWGJResponse.m */; };
+		1972D8701EB8E4F000E320C4 /* CWGJRequestConvertible.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972D86F1EB8E4F000E320C4 /* CWGJRequestConvertible.m */; };
 		199E0EAC1EB88B100000E81E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E0EAB1EB88B100000E81E /* main.m */; };
 		199E0EAF1EB88B100000E81E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E0EAE1EB88B100000E81E /* AppDelegate.m */; };
 		199E0EB21EB88B100000E81E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E0EB11EB88B100000E81E /* FirstViewController.m */; };
@@ -15,11 +19,22 @@
 		199E0EBA1EB88B100000E81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199E0EB91EB88B100000E81E /* Assets.xcassets */; };
 		199E0EBD1EB88B100000E81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199E0EBB1EB88B100000E81E /* LaunchScreen.storyboard */; };
 		199E0EC71EB893760000E81E /* CWGJRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E0EC61EB893760000E81E /* CWGJRequest.m */; };
+		19B6CFBB1EBD65900052A299 /* CWGJRequestContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B6CFBA1EBD65900052A299 /* CWGJRequestContext.m */; };
+		19B6CFBE1EBD6F040052A299 /* CWGJRequestContext+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B6CFBD1EBD6F040052A299 /* CWGJRequestContext+Factory.m */; };
 		5AB33B36402327FEE09AEAF9 /* libPods-CWGJRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6458BADBC61B3E303E616A /* libPods-CWGJRequest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		110FD4A37237901841728347 /* Pods-CWGJRequest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWGJRequest.release.xcconfig"; path = "Pods/Target Support Files/Pods-CWGJRequest/Pods-CWGJRequest.release.xcconfig"; sourceTree = "<group>"; };
+		1932A3701EBB765100E0CD7D /* CWGJRequestError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWGJRequestError.h; sourceTree = "<group>"; };
+		1932A3711EBB766100E0CD7D /* CWGJRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestError.m; sourceTree = "<group>"; };
+		1932A3761EBB7B6100E0CD7D /* CWGJResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponseMapper.h; sourceTree = "<group>"; };
+		1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJResponseMapper.m; sourceTree = "<group>"; };
+		1972D8691EB8DCC600E320C4 /* CWGJResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponse.h; sourceTree = "<group>"; };
+		1972D86A1EB8DCC600E320C4 /* CWGJResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJResponse.m; sourceTree = "<group>"; };
+		1972D86C1EB8DED100E320C4 /* CWGJRequestBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWGJRequestBlock.h; sourceTree = "<group>"; };
+		1972D86E1EB8E4F000E320C4 /* CWGJRequestConvertible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJRequestConvertible.h; sourceTree = "<group>"; };
+		1972D86F1EB8E4F000E320C4 /* CWGJRequestConvertible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestConvertible.m; sourceTree = "<group>"; };
 		199E0EA71EB88B100000E81E /* CWGJRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CWGJRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199E0EAB1EB88B100000E81E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		199E0EAD1EB88B100000E81E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,6 +49,10 @@
 		199E0EBE1EB88B100000E81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		199E0EC51EB893760000E81E /* CWGJRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJRequest.h; sourceTree = "<group>"; };
 		199E0EC61EB893760000E81E /* CWGJRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequest.m; sourceTree = "<group>"; };
+		19B6CFB91EBD65900052A299 /* CWGJRequestContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJRequestContext.h; sourceTree = "<group>"; };
+		19B6CFBA1EBD65900052A299 /* CWGJRequestContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestContext.m; sourceTree = "<group>"; };
+		19B6CFBC1EBD6F040052A299 /* CWGJRequestContext+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CWGJRequestContext+Factory.h"; sourceTree = "<group>"; };
+		19B6CFBD1EBD6F040052A299 /* CWGJRequestContext+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CWGJRequestContext+Factory.m"; sourceTree = "<group>"; };
 		8D6458BADBC61B3E303E616A /* libPods-CWGJRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CWGJRequest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C38A3143CAC61CD8BD0A40 /* Pods-CWGJRequest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWGJRequest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CWGJRequest/Pods-CWGJRequest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,8 +117,21 @@
 		199E0EC41EB893570000E81E /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				1972D86C1EB8DED100E320C4 /* CWGJRequestBlock.h */,
 				199E0EC51EB893760000E81E /* CWGJRequest.h */,
 				199E0EC61EB893760000E81E /* CWGJRequest.m */,
+				1972D8691EB8DCC600E320C4 /* CWGJResponse.h */,
+				1972D86A1EB8DCC600E320C4 /* CWGJResponse.m */,
+				1972D86E1EB8E4F000E320C4 /* CWGJRequestConvertible.h */,
+				1972D86F1EB8E4F000E320C4 /* CWGJRequestConvertible.m */,
+				1932A3701EBB765100E0CD7D /* CWGJRequestError.h */,
+				1932A3711EBB766100E0CD7D /* CWGJRequestError.m */,
+				1932A3761EBB7B6100E0CD7D /* CWGJResponseMapper.h */,
+				1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */,
+				19B6CFB91EBD65900052A299 /* CWGJRequestContext.h */,
+				19B6CFBA1EBD65900052A299 /* CWGJRequestContext.m */,
+				19B6CFBC1EBD6F040052A299 /* CWGJRequestContext+Factory.h */,
+				19B6CFBD1EBD6F040052A299 /* CWGJRequestContext+Factory.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -150,6 +182,7 @@
 		199E0E9F1EB88B100000E81E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CWGJ;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = cheweiguanjia;
 				TargetAttributes = {
@@ -243,11 +276,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B6CFBB1EBD65900052A299 /* CWGJRequestContext.m in Sources */,
 				199E0EC71EB893760000E81E /* CWGJRequest.m in Sources */,
+				1972D86B1EB8DCC600E320C4 /* CWGJResponse.m in Sources */,
+				1932A3781EBB7B6100E0CD7D /* CWGJResponseMapper.m in Sources */,
+				1972D8701EB8E4F000E320C4 /* CWGJRequestConvertible.m in Sources */,
+				1932A3721EBB766100E0CD7D /* CWGJRequestError.m in Sources */,
 				199E0EB51EB88B100000E81E /* SecondViewController.m in Sources */,
 				199E0EAF1EB88B100000E81E /* AppDelegate.m in Sources */,
 				199E0EB21EB88B100000E81E /* FirstViewController.m in Sources */,
 				199E0EAC1EB88B100000E81E /* main.m in Sources */,
+				19B6CFBE1EBD6F040052A299 /* CWGJRequestContext+Factory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
