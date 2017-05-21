@@ -7,8 +7,8 @@
 //
 
 
-@class CWGJResponse;
+@class CWGJResponse, RKMapping;
 
 typedef void (^CWGJRequestCompletionBlock)(CWGJResponse *response);
 typedef id (^CWGJJSONMapBlock)(id json);
-
+typedef RKMapping *(^CWGJMappingBlock)(void);

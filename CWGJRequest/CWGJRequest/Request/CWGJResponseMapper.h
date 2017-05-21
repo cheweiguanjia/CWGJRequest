@@ -31,7 +31,12 @@
 
 @interface CWGJObjectMapper : NSObject <CWGJMapper>
 
-+ (instancetype)mapper;
++ (instancetype)mapperWithMappingBlock:(CWGJMappingBlock)mappingBlock;
++ (instancetype)mapperWithMappingBlock:(CWGJMappingBlock)mappingBlock
+                              metaData:(NSDictionary *)metaData;
++ (instancetype)mapperWithMappingBlock:(CWGJMappingBlock)mappingBlock
+                              metaData:(NSDictionary *)metaData
+                               JSONMap:(CWGJJSONMapBlock)JSONMap;
 
 
 @end
