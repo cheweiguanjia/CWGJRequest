@@ -10,6 +10,7 @@
 #import "CWGJRequestContext+Factory.h"
 #import "CWGJRequestContext.h"
 #import "CWGJRequest.h"
+#import "CWGJResponseMapper.h"
 
 @interface FirstViewController ()
 
@@ -21,14 +22,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    CWGJRequestContext *context = [CWGJRequestContext baseRequestContext];
-    [[CWGJRequestManager sharedManager] request:context];
+    UIButton *requestBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
+    [requestBtn setTitle:@"Request" forState:UIControlStateNormal];
+    [requestBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [requestBtn addTarget:self action:@selector(requestActioin) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:requestBtn];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)requestActioin {
+    CWGJRequestContext *context = [CWGJRequestContext baseRequestContext];
+    context.mapper = [CWGJJSONMapper mapperWithJSONMap:^id(id json) {
+        return json[@"weatherinfo"];
+    }];
+    [[[CWGJRequestManager sharedManager] request:context] response:^(CWGJResponse *response) {
+        NSLog(@"test response:%@", response);
+    }];
 }
 
 

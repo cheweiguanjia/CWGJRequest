@@ -9,7 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "CWGJRequestConvertible.h"
 
+typedef void(^CWGJReuqestProgressBlock)(NSProgress *progress);
+
 @interface CWGJRequest : NSObject
+
+@property (nonatomic, strong, readonly) NSProgress *progress;
+
+- (CWGJRequest *)progress:(CWGJReuqestProgressBlock)progressBlock;
+
+- (BOOL)isRequesting;
+- (CWGJRequest *)response:(CWGJRequestCompletionBlock)completion;
 
 @end
 

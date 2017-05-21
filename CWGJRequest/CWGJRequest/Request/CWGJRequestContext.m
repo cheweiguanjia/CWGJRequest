@@ -56,6 +56,9 @@
 #pragma mark - CWGJRequestConvertible
 
 - (NSMutableURLRequest *)requestSerialize {
+    if ([self.signature respondsToSelector:@selector(signatureWithContext:)]) {
+        [self.signature signatureWithContext:self];
+    }
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithMethod:self.method
                                                                 URLString:self.URL.absoluteString
                                                                    params:self.params
@@ -67,10 +70,21 @@
 }
 
 - (void)responseDeserialize:(CWGJResponse *)response completion:(CWGJRequestCompletionBlock)completion {
-    if (!response.error && [self.mapper respondsToSelector:@selector(mapResponse:completion:)]) {
-        [self.mapper mapResponse:response completion:completion];
+    if ([self.validation respondsToSelector:@selector(validateResponse:completion:)]) {
+        __weak typeof(self) weakSelf = self;
+        [self.validation validateResponse:response completion:^(CWGJResponse *response) {
+            if (!response.error && [weakSelf.mapper respondsToSelector:@selector(mapResponse:completion:)]) {
+                [weakSelf.mapper mapResponse:response completion:completion];
+            } else {
+                completion(response);
+            }
+        }];
     } else {
-        completion(response);
+        if (!response.error && [self.mapper respondsToSelector:@selector(mapResponse:completion:)]) {
+            [self.mapper mapResponse:response completion:completion];
+        } else {
+            completion(response);
+        }
     }
 }
 

@@ -10,6 +10,9 @@
 #import "CWGJRequestConvertible.h"
 #import "CWGJResponseMapper.h"
 
+@protocol CWGJRequestSignature;
+@protocol CWGJResponseValidation;
+
 @interface CWGJRequestContext : NSObject <CWGJRequestConvertible>
 
 // 请求
@@ -25,7 +28,10 @@
 @property (nonatomic, strong, readonly) NSMutableDictionary *params;
 @property (nonatomic, copy) CWGJConstructingBodyBlock constructingBodyBlock;
 
+@property (nonatomic, strong) id<CWGJRequestSignature> signature;
+
 // 响应
+@property (nonatomic, strong) id<CWGJResponseValidation> validation;
 @property (nonatomic, strong) id<CWGJMapper> mapper;
 
 - (void)addHeader:(id)header forKey:(NSString *)key;
@@ -36,3 +42,16 @@
 + (instancetype)requestContext;
 
 @end
+
+@protocol CWGJRequestSignature <NSObject>
+
+- (void)signatureWithContext:(CWGJRequestContext *)context;
+
+@end
+
+@protocol CWGJResponseValidation <NSObject>
+
+- (void)validateResponse:(CWGJResponse *)response completion:(CWGJRequestCompletionBlock)completion;
+
+@end
+
