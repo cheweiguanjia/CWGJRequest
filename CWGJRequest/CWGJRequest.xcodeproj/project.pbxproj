@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1932A3721EBB766100E0CD7D /* CWGJRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3711EBB766100E0CD7D /* CWGJRequestError.m */; };
 		1932A3781EBB7B6100E0CD7D /* CWGJResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */; };
+		1953B0A91ED2DA180000A750 /* CWGJRequestSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 1953B0A81ED2DA180000A750 /* CWGJRequestSignature.m */; };
+		1953B0AC1ED2DA440000A750 /* CWGJResponseValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1953B0AB1ED2DA440000A750 /* CWGJResponseValidation.m */; };
 		1972D86B1EB8DCC600E320C4 /* CWGJResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972D86A1EB8DCC600E320C4 /* CWGJResponse.m */; };
 		1972D8701EB8E4F000E320C4 /* CWGJRequestConvertible.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972D86F1EB8E4F000E320C4 /* CWGJRequestConvertible.m */; };
 		199E0EAC1EB88B100000E81E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E0EAB1EB88B100000E81E /* main.m */; };
@@ -30,6 +32,10 @@
 		1932A3711EBB766100E0CD7D /* CWGJRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestError.m; sourceTree = "<group>"; };
 		1932A3761EBB7B6100E0CD7D /* CWGJResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponseMapper.h; sourceTree = "<group>"; };
 		1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJResponseMapper.m; sourceTree = "<group>"; };
+		1953B0A71ED2DA180000A750 /* CWGJRequestSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJRequestSignature.h; sourceTree = "<group>"; };
+		1953B0A81ED2DA180000A750 /* CWGJRequestSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestSignature.m; sourceTree = "<group>"; };
+		1953B0AA1ED2DA440000A750 /* CWGJResponseValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponseValidation.h; sourceTree = "<group>"; };
+		1953B0AB1ED2DA440000A750 /* CWGJResponseValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJResponseValidation.m; sourceTree = "<group>"; };
 		1972D8691EB8DCC600E320C4 /* CWGJResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponse.h; sourceTree = "<group>"; };
 		1972D86A1EB8DCC600E320C4 /* CWGJResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJResponse.m; sourceTree = "<group>"; };
 		1972D86C1EB8DED100E320C4 /* CWGJRequestBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWGJRequestBlock.h; sourceTree = "<group>"; };
@@ -132,6 +138,10 @@
 				19B6CFBA1EBD65900052A299 /* CWGJRequestContext.m */,
 				19B6CFBC1EBD6F040052A299 /* CWGJRequestContext+Factory.h */,
 				19B6CFBD1EBD6F040052A299 /* CWGJRequestContext+Factory.m */,
+				1953B0A71ED2DA180000A750 /* CWGJRequestSignature.h */,
+				1953B0A81ED2DA180000A750 /* CWGJRequestSignature.m */,
+				1953B0AA1ED2DA440000A750 /* CWGJResponseValidation.h */,
+				1953B0AB1ED2DA440000A750 /* CWGJResponseValidation.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -188,7 +198,8 @@
 				TargetAttributes = {
 					199E0EA61EB88B100000E81E = {
 						CreatedOnToolsVersion = 8.3.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 77KK4NQXC6;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -279,10 +290,12 @@
 				19B6CFBB1EBD65900052A299 /* CWGJRequestContext.m in Sources */,
 				199E0EC71EB893760000E81E /* CWGJRequest.m in Sources */,
 				1972D86B1EB8DCC600E320C4 /* CWGJResponse.m in Sources */,
+				1953B0A91ED2DA180000A750 /* CWGJRequestSignature.m in Sources */,
 				1932A3781EBB7B6100E0CD7D /* CWGJResponseMapper.m in Sources */,
 				1972D8701EB8E4F000E320C4 /* CWGJRequestConvertible.m in Sources */,
 				1932A3721EBB766100E0CD7D /* CWGJRequestError.m in Sources */,
 				199E0EB51EB88B100000E81E /* SecondViewController.m in Sources */,
+				1953B0AC1ED2DA440000A750 /* CWGJResponseValidation.m in Sources */,
 				199E0EAF1EB88B100000E81E /* AppDelegate.m in Sources */,
 				199E0EB21EB88B100000E81E /* FirstViewController.m in Sources */,
 				199E0EAC1EB88B100000E81E /* main.m in Sources */,
@@ -407,10 +420,14 @@
 			baseConfigurationReference = F8C38A3143CAC61CD8BD0A40 /* Pods-CWGJRequest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 77KK4NQXC6;
 				INFOPLIST_FILE = CWGJRequest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cwgj.CWGJRequest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyqc.qcw.siji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "25f04c16-580b-4b11-955a-2786a9e04806";
+				PROVISIONING_PROFILE_SPECIFIER = siji_dev;
 			};
 			name = Debug;
 		};
@@ -419,10 +436,13 @@
 			baseConfigurationReference = 110FD4A37237901841728347 /* Pods-CWGJRequest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CWGJRequest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cwgj.CWGJRequest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyqc.qcw.siji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

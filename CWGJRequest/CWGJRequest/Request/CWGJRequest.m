@@ -123,6 +123,15 @@ CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConverti
 
 @implementation CWGJRequestManager
 
++ (instancetype)sharedManager {
+    static CWGJRequestManager *manager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [CWGJRequestManager new];
+    });
+    return manager;
+}
+
 - (instancetype)init {
     return [self initWithSessionConfiguration:nil];
 }
@@ -136,13 +145,10 @@ CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConverti
     return self;
 }
 
-+ (instancetype)sharedManager {
-    static CWGJRequestManager *manager;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        manager = [CWGJRequestManager new];
-    });
-    return manager;
+- (void)cancelAllRequests {
+    [self.sessionManager.tasks enumerateObjectsUsingBlock:^(NSURLSessionTask * _Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+        [task cancel];
+    }];
 }
 
 - (NSURLSession *)session {
@@ -180,6 +186,51 @@ CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConverti
         id<CWGJRequestConvertible> requestConvertible = requestConvertibleBlock();
         [weakSelf request:request convertible:requestConvertible];
     });
+    return request;
+}
+
+- (CWGJRequest *)upload:(id<CWGJRequestConvertible>)requestConvertible fromFile:(NSURL *)fileURL {
+    CWGJRequest *request = [CWGJRequest new];
+    NSURLRequest *URLRequest = [requestConvertible requestSerialize];
+    request.task = [self.sessionManager uploadTaskWithRequest:URLRequest
+                                                     fromFile:fileURL
+                                                     progress:nil
+                                            completionHandler:completionHandler(request, requestConvertible)];
+    request.progress = [self.sessionManager uploadProgressForTask:request.task];
+    [request.task resume];
+    return request;
+}
+
+- (CWGJRequest *)upload:(id<CWGJRequestConvertible>)requestConvertible fromData:(NSData *)data {
+    CWGJRequest *request = [CWGJRequest new];
+    NSURLRequest *URLRequest = [requestConvertible requestSerialize];
+    request.task = [self.sessionManager uploadTaskWithRequest:URLRequest
+                                                     fromData:data
+                                                     progress:nil
+                                            completionHandler:completionHandler(request, requestConvertible)];
+    request.progress = [self.sessionManager uploadProgressForTask:request.task];
+    [request.task resume];
+    return request;
+}
+
+- (CWGJRequest *)download:(id<CWGJRequestConvertible>)requestConvertible
+               resumeData:(NSData *)resumeData
+              destination:(CWGJRequestDestinationBlock)destination {
+    CWGJRequest *request = [CWGJRequest new];
+    NSURLRequest *URLRequest = [requestConvertible requestSerialize];
+    if (resumeData) {
+        request.task = [self.sessionManager downloadTaskWithResumeData:resumeData
+                                                              progress:nil
+                                                           destination:destination
+                                                     completionHandler:completionHandler(request, requestConvertible)];
+    } else {
+        request.task = [self.sessionManager downloadTaskWithRequest:URLRequest
+                                                           progress:nil
+                                                        destination:destination
+                                                  completionHandler:completionHandler(request, requestConvertible)];
+    }
+    request.progress = [self.sessionManager downloadProgressForTask:request.task];
+    [request.task resume];
     return request;
 }
 

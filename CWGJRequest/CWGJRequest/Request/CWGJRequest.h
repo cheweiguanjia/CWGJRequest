@@ -10,6 +10,7 @@
 #import "CWGJRequestConvertible.h"
 
 typedef void(^CWGJReuqestProgressBlock)(NSProgress *progress);
+typedef NSURL *(^CWGJRequestDestinationBlock)(NSURL *targetPath, NSURLResponse *response);
 
 @interface CWGJRequest : NSObject
 
