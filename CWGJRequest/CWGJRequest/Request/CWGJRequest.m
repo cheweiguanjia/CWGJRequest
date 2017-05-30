@@ -151,10 +151,6 @@ CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConverti
     }];
 }
 
-- (NSURLSession *)session {
-    return self.sessionManager.session;
-}
-
 - (void)request:(CWGJRequest *)request convertible:(id<CWGJRequestConvertible>)requestConvertible {
     NSURLRequest *URLRequest = [requestConvertible requestSerialize];
     NSParameterAssert(URLRequest);
@@ -175,17 +171,6 @@ CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConverti
 - (CWGJRequest *)request:(id<CWGJRequestConvertible>)requestConvertible {
     CWGJRequest *request = [CWGJRequest new];
     [self request:request convertible:requestConvertible];
-    return request;
-}
-
-- (CWGJRequest *)asyncRequest:(id<CWGJRequestConvertible> (^)(void))requestConvertibleBlock {
-    NSParameterAssert(requestConvertibleBlock);
-    CWGJRequest *request = [CWGJRequest new];
-    __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        id<CWGJRequestConvertible> requestConvertible = requestConvertibleBlock();
-        [weakSelf request:request convertible:requestConvertible];
-    });
     return request;
 }
 
@@ -235,3 +220,24 @@ CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConverti
 }
 
 @end
+
+// c style method
+void cancelAllRequest() {
+    [[CWGJRequestManager sharedManager] cancelAllRequests];
+}
+
+CWGJRequest *request(id<CWGJRequestConvertible> requestConvertible) {
+    return [[CWGJRequestManager sharedManager] request:requestConvertible];
+}
+
+CWGJRequest *uploadFile(id<CWGJRequestConvertible> requestConvertible, NSURL *fileURL) {
+    return [[CWGJRequestManager sharedManager] upload:requestConvertible fromFile:fileURL];
+}
+
+CWGJRequest *uploadData(id<CWGJRequestConvertible> requestConvertible, NSData *bodyData) {
+    return [[CWGJRequestManager sharedManager] upload:requestConvertible fromData:bodyData];
+}
+
+CWGJRequest *download(id<CWGJRequestConvertible> requestConvertible, NSData *resumeData, CWGJRequestDestinationBlock destination) {
+    return [[CWGJRequestManager sharedManager] download:requestConvertible resumeData:resumeData destination:destination];
+}

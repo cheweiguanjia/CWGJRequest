@@ -48,10 +48,9 @@
     if (completion) {
         if (!response.error && response.data) {
             NSError *error = nil;
-            id responseObject = [NSJSONSerialization
-                                 JSONObjectWithData:response.data
-                                 options:NSJSONReadingMutableContainers
-                                 error:&error];
+            id responseObject = [NSJSONSerialization JSONObjectWithData:response.data
+                                                                options:NSJSONReadingMutableContainers
+                                                                  error:&error];
             if (self.JSONMap && responseObject) {
                 responseObject = self.JSONMap(responseObject);
             }

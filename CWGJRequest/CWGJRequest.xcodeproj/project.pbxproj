@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190FD7CB1EDC175A007D82F0 /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 190FD7CA1EDC175A007D82F0 /* WeatherInfo.m */; };
 		1932A3721EBB766100E0CD7D /* CWGJRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3711EBB766100E0CD7D /* CWGJRequestError.m */; };
 		1932A3781EBB7B6100E0CD7D /* CWGJResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */; };
 		1953B0A91ED2DA180000A750 /* CWGJRequestSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 1953B0A81ED2DA180000A750 /* CWGJRequestSignature.m */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		110FD4A37237901841728347 /* Pods-CWGJRequest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWGJRequest.release.xcconfig"; path = "Pods/Target Support Files/Pods-CWGJRequest/Pods-CWGJRequest.release.xcconfig"; sourceTree = "<group>"; };
+		190FD7C91EDC175A007D82F0 /* WeatherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherInfo.h; sourceTree = "<group>"; };
+		190FD7CA1EDC175A007D82F0 /* WeatherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherInfo.m; sourceTree = "<group>"; };
 		1932A3701EBB765100E0CD7D /* CWGJRequestError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWGJRequestError.h; sourceTree = "<group>"; };
 		1932A3711EBB766100E0CD7D /* CWGJRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestError.m; sourceTree = "<group>"; };
 		1932A3761EBB7B6100E0CD7D /* CWGJResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponseMapper.h; sourceTree = "<group>"; };
@@ -75,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190FD7C81EDC1746007D82F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				190FD7C91EDC175A007D82F0 /* WeatherInfo.h */,
+				190FD7CA1EDC175A007D82F0 /* WeatherInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		199E0E9E1EB88B100000E81E = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,7 @@
 		199E0EA91EB88B100000E81E /* CWGJRequest */ = {
 			isa = PBXGroup;
 			children = (
+				190FD7C81EDC1746007D82F0 /* Model */,
 				199E0EC41EB893570000E81E /* Request */,
 				199E0EAD1EB88B100000E81E /* AppDelegate.h */,
 				199E0EAE1EB88B100000E81E /* AppDelegate.m */,
@@ -297,6 +310,7 @@
 				199E0EB51EB88B100000E81E /* SecondViewController.m in Sources */,
 				1953B0AC1ED2DA440000A750 /* CWGJResponseValidation.m in Sources */,
 				199E0EAF1EB88B100000E81E /* AppDelegate.m in Sources */,
+				190FD7CB1EDC175A007D82F0 /* WeatherInfo.m in Sources */,
 				199E0EB21EB88B100000E81E /* FirstViewController.m in Sources */,
 				199E0EAC1EB88B100000E81E /* main.m in Sources */,
 				19B6CFBE1EBD6F040052A299 /* CWGJRequestContext+Factory.m in Sources */,

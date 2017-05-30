@@ -11,6 +11,8 @@
 #import "CWGJRequestContext.h"
 #import "CWGJRequest.h"
 #import "CWGJResponseMapper.h"
+#import "RKObjectMapping.h"
+#import "WeatherInfo.h"
 
 @interface FirstViewController ()
 
@@ -35,9 +37,17 @@
 
 - (void)requestActioin {
     CWGJRequestContext *context = [CWGJRequestContext baseRequestContext];
-    context.mapper = [CWGJJSONMapper mapperWithJSONMap:^id(id json) {
+//    context.mapper = [CWGJJSONMapper mapperWithJSONMap:^id(id json) {
+//        return json[@"weatherinfo"];
+//    }];
+    CWGJObjectMapper *objMapper = [CWGJObjectMapper mapperWithMappingBlock:^RKMapping *{
+        RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[WeatherInfo class]];
+        [mapping addAttributeMappingsFromArray:@[@"city", @"cityid"]];
+        return mapping;
+    } metaData:nil JSONMap:^id(id json) {
         return json[@"weatherinfo"];
     }];
+    context.mapper = objMapper;
     [[[CWGJRequestManager sharedManager] request:context] response:^(CWGJResponse *response) {
         NSLog(@"test response:%@", response);
     }];

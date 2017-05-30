@@ -53,9 +53,15 @@ NSString * stringForMethod(CWGJRequestMethod method) {
     NSMutableURLRequest *request = nil;
     NSError *error = nil;
     if (constructingBodyBlock) {
-        request = [serializer multipartFormRequestWithMethod:stringForMethod(method) URLString:URLString parameters:params constructingBodyWithBlock:constructingBodyBlock error:&error];
+        request = [serializer multipartFormRequestWithMethod:stringForMethod(method)
+                                                   URLString:URLString
+                                                  parameters:params
+                                   constructingBodyWithBlock:constructingBodyBlock
+                                                       error:&error];
     } else {
-        request = [serializer requestWithMethod:stringForMethod(method) URLString:URLString parameters:params error:&error];
+        request = [serializer requestWithMethod:stringForMethod(method)
+                                      URLString:URLString parameters:params
+                                          error:&error];
     }
     NSParameterAssert(error == nil);
     NSParameterAssert(request);
