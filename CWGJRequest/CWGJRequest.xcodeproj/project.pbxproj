@@ -10,6 +10,7 @@
 		190FD7CB1EDC175A007D82F0 /* WeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 190FD7CA1EDC175A007D82F0 /* WeatherInfo.m */; };
 		1932A3721EBB766100E0CD7D /* CWGJRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3711EBB766100E0CD7D /* CWGJRequestError.m */; };
 		1932A3781EBB7B6100E0CD7D /* CWGJResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */; };
+		1947980A1EED881D0082AF16 /* CWGJCancelable.m in Sources */ = {isa = PBXBuildFile; fileRef = 194798091EED881D0082AF16 /* CWGJCancelable.m */; };
 		1953B0A91ED2DA180000A750 /* CWGJRequestSignature.m in Sources */ = {isa = PBXBuildFile; fileRef = 1953B0A81ED2DA180000A750 /* CWGJRequestSignature.m */; };
 		1953B0AC1ED2DA440000A750 /* CWGJResponseValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1953B0AB1ED2DA440000A750 /* CWGJResponseValidation.m */; };
 		1972D86B1EB8DCC600E320C4 /* CWGJResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972D86A1EB8DCC600E320C4 /* CWGJResponse.m */; };
@@ -35,6 +36,8 @@
 		1932A3711EBB766100E0CD7D /* CWGJRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestError.m; sourceTree = "<group>"; };
 		1932A3761EBB7B6100E0CD7D /* CWGJResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponseMapper.h; sourceTree = "<group>"; };
 		1932A3771EBB7B6100E0CD7D /* CWGJResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJResponseMapper.m; sourceTree = "<group>"; };
+		194798081EED881D0082AF16 /* CWGJCancelable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJCancelable.h; sourceTree = "<group>"; };
+		194798091EED881D0082AF16 /* CWGJCancelable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJCancelable.m; sourceTree = "<group>"; };
 		1953B0A71ED2DA180000A750 /* CWGJRequestSignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJRequestSignature.h; sourceTree = "<group>"; };
 		1953B0A81ED2DA180000A750 /* CWGJRequestSignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWGJRequestSignature.m; sourceTree = "<group>"; };
 		1953B0AA1ED2DA440000A750 /* CWGJResponseValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWGJResponseValidation.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				1972D86C1EB8DED100E320C4 /* CWGJRequestBlock.h */,
+				194798081EED881D0082AF16 /* CWGJCancelable.h */,
+				194798091EED881D0082AF16 /* CWGJCancelable.m */,
 				199E0EC51EB893760000E81E /* CWGJRequest.h */,
 				199E0EC61EB893760000E81E /* CWGJRequest.m */,
 				1972D8691EB8DCC600E320C4 /* CWGJResponse.h */,
@@ -301,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B6CFBB1EBD65900052A299 /* CWGJRequestContext.m in Sources */,
+				1947980A1EED881D0082AF16 /* CWGJCancelable.m in Sources */,
 				199E0EC71EB893760000E81E /* CWGJRequest.m in Sources */,
 				1972D86B1EB8DCC600E320C4 /* CWGJResponse.m in Sources */,
 				1953B0A91ED2DA180000A750 /* CWGJRequestSignature.m in Sources */,

@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "CWGJRequestConvertible.h"
+#import "CWGJCancelable.h"
 
 typedef void(^CWGJReuqestProgressBlock)(NSProgress *progress);
 typedef NSURL *(^CWGJRequestDestinationBlock)(NSURL *targetPath, NSURLResponse *response);
 
-@interface CWGJRequest : NSObject
+@interface CWGJRequest : NSObject <CWGJCancelable>
 
 @property (nonatomic, strong, readonly) NSProgress *progress;
 
 - (BOOL)isRequesting;
+- (void)addToCancelableBag:(CWGJCancelableBag *)cancelableBag;
 - (CWGJRequest *)progress:(CWGJReuqestProgressBlock)progressBlock;
 - (CWGJRequest *)response:(CWGJRequestCompletionBlock)completion;
 
@@ -42,4 +44,4 @@ void cancelAllRequests();
 CWGJRequest *request(id<CWGJRequestConvertible> requestConvertible);
 CWGJRequest *uploadFile(id<CWGJRequestConvertible> requestConvertible, NSURL *fileURL);
 CWGJRequest *uploadData(id<CWGJRequestConvertible> requestConvertible, NSData *bodyData);
-CWGJRequest * download(id<CWGJRequestConvertible>  requestConvertible, NSData *resumeData, CWGJRequestDestinationBlock destination);
+CWGJRequest *download(id<CWGJRequestConvertible>  requestConvertible, NSData *resumeData, CWGJRequestDestinationBlock destination);

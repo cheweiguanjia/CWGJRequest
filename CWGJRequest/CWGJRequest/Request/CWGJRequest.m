@@ -58,6 +58,18 @@
     return self.task && (self.task.state == NSURLSessionTaskStateRunning || self.task.state == NSURLSessionTaskStateSuspended);
 }
 
+- (void)cancel {
+    if (self.response.cancelBlock) {
+        self.response.cancelBlock();
+        self.response.cancelBlock = nil;
+    }
+    [self.task cancel];
+}
+
+- (void)addToCancelableBag:(CWGJCancelableBag *)cancelableBag {
+    [cancelableBag addCancelable:self];
+}
+
 - (CWGJRequest *)response:(CWGJRequestCompletionBlock)completion {
     if (!self.completionBlocks) {
         self.completionBlocks = [NSMutableArray arrayWithCapacity:1];
@@ -92,7 +104,7 @@
 @end
 
 /***************************************************************************************************/
-#pragma mark -
+#pragma mark - c
 
 typedef void (^CompletionHandler)(NSURLResponse *URLResponse, id data, NSError *error);
 CompletionHandler completionHandler(CWGJRequest *request, id<CWGJRequestConvertible> requestConvertible) {

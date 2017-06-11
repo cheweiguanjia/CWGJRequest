@@ -48,9 +48,9 @@
         return json[@"weatherinfo"];
     }];
     context.mapper = objMapper;
-    [[[CWGJRequestManager sharedManager] request:context] response:^(CWGJResponse *response) {
+    [[[[CWGJRequestManager sharedManager] request:context] response:^(CWGJResponse *response) {
         NSLog(@"test response:%@", response);
-    }];
+    }] addToCancelableBag:self.cancelableBag];
 }
 
 

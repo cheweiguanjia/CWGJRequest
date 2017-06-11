@@ -60,7 +60,8 @@ NSString * stringForMethod(CWGJRequestMethod method) {
                                                        error:&error];
     } else {
         request = [serializer requestWithMethod:stringForMethod(method)
-                                      URLString:URLString parameters:params
+                                      URLString:URLString
+                                     parameters:params
                                           error:&error];
     }
     NSParameterAssert(error == nil);
